@@ -21,9 +21,8 @@ class FoodDelivery extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Food Delivery',
-      home: CartPage(),
-      // initialRoute: RouteHelper.initial,
-      // getPages: RouteHelper.routes,
+      initialRoute: RouteHelper.initial,
+      getPages: RouteHelper.routes,
     );
   }
 }
