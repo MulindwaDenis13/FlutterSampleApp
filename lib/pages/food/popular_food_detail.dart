@@ -12,10 +12,12 @@ import 'package:ecommerce/utils/dimensions.dart';
 import 'package:get/get.dart';
 
 class PopularFoodDetail extends StatelessWidget {
-  int pageId;
-  PopularFoodDetail({
+  final int pageId;
+  final String page;
+  const PopularFoodDetail({
     super.key,
     required this.pageId,
+    required this.page,
   });
 
   @override
@@ -28,9 +30,11 @@ class PopularFoodDetail extends StatelessWidget {
       backgroundColor: Colors.white,
       body: GestureDetector(
         onTap: () {
-          Get.toNamed(
-            RouteHelper.getInitial(),
-          );
+          if (page == 'cartPage') {
+            Get.toNamed(RouteHelper.getCartPage());
+          } else {
+            Get.toNamed(RouteHelper.getInitial());
+          }
         },
         child: Stack(
           children: [
