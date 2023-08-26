@@ -1,5 +1,8 @@
+import 'package:ecommerce/controllers/cart_controller.dart';
 import 'package:ecommerce/controllers/popular_product_controller.dart';
 import 'package:ecommerce/controllers/recommended_product_controller.dart';
+import 'package:ecommerce/pages/auth/sign_in_page.dart';
+import 'package:ecommerce/pages/auth/sign_up_page.dart';
 import 'package:ecommerce/routes/route_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,16 +18,23 @@ class FoodDelivery extends StatelessWidget {
   const FoodDelivery({super.key});
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<PopularProductController>(builder: (_) {
-      return GetBuilder<RecommendedProductController>(builder: (_) {
-        return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Food Delivery',
-          initialRoute: RouteHelper.getSplashPage(),
-          getPages: RouteHelper.routes,
+    Get.find<CartController>().getCartData();
+    return GetBuilder<PopularProductController>(
+      builder: (_) {
+        return GetBuilder<RecommendedProductController>(
+          builder: (_) {
+            return const GetMaterialApp(
+              debugShowCheckedModeBanner: false,
+              title: 'Food Delivery',
+              // initialRoute: RouteHelper.getSplashPage(),
+              // getPages: RouteHelper.routes,
+              // home: SignUpPage(),
+              home: SignInPage(),
+            );
+          },
         );
-      });
-    });
+      },
+    );
   }
 }
 //for missing plugin exception clean flutter and clear everything
@@ -34,3 +44,4 @@ class FoodDelivery extends StatelessWidget {
 // flutter downgrade <version> (example: flutter downgrade v1.2.1)
 // flutter channel <branch> (example: flutter channel stable)
 // pub.dev
+//shift + command + k helps to show keyboard on mac

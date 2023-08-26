@@ -31,9 +31,9 @@ class PopularFoodDetail extends StatelessWidget {
       body: GestureDetector(
         onTap: () {
           if (page == 'cartPage') {
-            Get.toNamed(RouteHelper.getCartPage());
-          } else {
             Get.toNamed(RouteHelper.getInitial());
+          } else {
+            Get.toNamed(RouteHelper.getCartPage());
           }
         },
         child: Stack(

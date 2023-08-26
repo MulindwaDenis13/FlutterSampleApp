@@ -57,9 +57,9 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
               ),
             ),
           ),
-          Center(
-            child: Text('The Best Food'),
-          ),
+          // Center(
+          //   child: Text('The Best Food'),
+          // ),
         ],
       ),
     );
