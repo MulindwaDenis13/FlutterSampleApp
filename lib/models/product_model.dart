@@ -1,4 +1,3 @@
-
 class Product {
   int? _totalSize;
   int? _typeId;
@@ -69,5 +68,20 @@ class ProductModel {
     updatedAt = json["updated_at"];
     createdAt = json["created_at"];
     typeId = json["type_id"];
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      "id": this.id,
+      "name": this.name,
+      "price": this.price,
+      "image": this.image,
+      "starts": this.stars,
+      "location": this.location,
+      "description": this.description,
+      "createdAt": this.createdAt,
+      "updatedAt": this.updatedAt,
+      "typeId": this.typeId
+    };
   }
 }
