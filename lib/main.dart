@@ -33,3 +33,11 @@ class FoodDelivery extends StatelessWidget {
 // https://api.flutter.dev/flutter/material/Colors-class.html#constants
 // flutter downgrade <version> (example: flutter downgrade v1.2.1)
 // flutter channel <branch> (example: flutter channel stable)
+
+//installation
+// Open a new terminal window
+// Type: git clone -b beta https://github.com/flutter/flutter.git
+// Wait for the SDK to clone onto your machine
+// Type: export PATH=$PWD/flutter/bin:$PATH , which adds flutter tool to your path
+// Type: flutter doctor , which downloads additional dependencies
+// Wait for dependencies to download and install
