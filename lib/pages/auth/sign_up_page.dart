@@ -9,6 +9,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/utils/colors.dart';
 import 'package:get/get.dart';
+import 'package:ecommerce/routes/route_helper.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({
@@ -53,8 +54,7 @@ class SignUpPage extends StatelessWidget {
         );
         authController.registration(signUpBody).then((response) {
           if (response.isSuccess) {
-            print(
-                "Reg successfully--------------------------------------------------------------------------");
+            Get.offNamed(RouteHelper.getInitial());
           } else {
             showCustomSnackBar(response.message);
           }
@@ -80,7 +80,7 @@ class SignUpPage extends StatelessWidget {
                           child: CircleAvatar(
                             backgroundColor: Colors.white,
                             radius: Dimensions.radius20 * 4,
-                            backgroundImage: AssetImage(
+                            backgroundImage: const AssetImage(
                               "assets/images/logo.png",
                             ),
                           ),
@@ -196,7 +196,7 @@ class SignUpPage extends StatelessWidget {
                     ],
                   ),
                 )
-              :const CustomLoader();
+              : const CustomLoader();
         },
       ),
     );

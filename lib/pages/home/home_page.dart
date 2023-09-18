@@ -1,4 +1,4 @@
-import 'package:ecommerce/pages/auth/sign_up_page.dart';
+
 import 'package:ecommerce/pages/account/account_page.dart';
 import 'package:ecommerce/pages/cart/cart_history.dart';
 import 'package:ecommerce/pages/home/main_food_page.dart';
@@ -19,7 +19,9 @@ class _HomePageState extends State<HomePage> {
   // late PersistentTabController _controller;
   List pages = [
     MainFoodPage(),
-    SignUpPage(),
+    Container(
+      child: Text("History Page"),
+    ),
     CartHistory(),
     AccountPage(),
   ];

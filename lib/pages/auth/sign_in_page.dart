@@ -18,28 +18,28 @@ class SignInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var emailController = TextEditingController();
+    var phoneController = TextEditingController();
     var passwordController = TextEditingController();
 
     void login(AuthController authController) {
-      String email = emailController.text.trim();
+      String phone = phoneController.text.trim();
       String password = passwordController.text.trim();
-      if (email.isEmpty) {
-        showCustomSnackBar("Type in your email", title: "Email Required");
-      } else if (!GetUtils.isEmail(email)) {
-        showCustomSnackBar("Your Email is Invalid", title: "Invalid Email");
-      } else if (password.isEmpty) {
+      if (phone.isEmpty) {
+        showCustomSnackBar("Type in your phone", title: "Phone Required");
+      }  else if (password.isEmpty) {
         showCustomSnackBar("Type in your password", title: "Password Required");
       } else if (password.length < 6) {
         showCustomSnackBar("Password should be atleast 6 characters",
             title: "Password Length");
       } else {
-        authController.login(email, password).then((response) => {
-              if (response.isSuccess)
-                {Get.toNamed(RouteHelper.getInitial())}
-              else
-                {showCustomSnackBar(response.message)}
-            });
+        authController.login(phone, password).then((response) {
+          print(response.isSuccess.toString());
+          if (response.isSuccess) {
+            Get.toNamed(RouteHelper.getInitial());
+          } else {
+            showCustomSnackBar(response.message);
+          }
+        });
       }
     }
 
@@ -97,10 +97,10 @@ class SignInPage extends StatelessWidget {
                         height: Dimensions.height20,
                       ),
                       AppTextField(
-                        textController: emailController,
-                        hintText: "Email",
+                        textController: phoneController,
+                        hintText: "Phone",
                         icon: Icon(
-                          Icons.email,
+                          Icons.phone,
                           color: AppColors.yellowColor,
                         ),
                       ),

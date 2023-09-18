@@ -1,5 +1,7 @@
 import 'package:ecommerce/base/no_data_page.dart';
+import 'package:ecommerce/controllers/auth_controller.dart';
 import 'package:ecommerce/controllers/cart_controller.dart';
+import 'package:ecommerce/controllers/location_controller.dart';
 import 'package:ecommerce/controllers/popular_product_controller.dart';
 import 'package:ecommerce/controllers/recommended_product_controller.dart';
 import 'package:ecommerce/utils/app_constants.dart';
@@ -254,7 +256,9 @@ class CartPage extends StatelessWidget {
                         ),
                       ),
                     )
-                  : NoDataPage(text: "Your Cart is Empty");
+                  : const NoDataPage(
+                      text: "Your Cart is Empty",
+                    );
             },
           )
         ],
@@ -312,7 +316,17 @@ class CartPage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          CartController.addToHistory();
+                            // print('testing auth=----------'+Get.find<AuthController>().userLoggedIn().toString());
+                          if (Get.find<AuthController>().userLoggedIn()) {
+                            // CartController.addToHistory();
+                            if (Get.find<LocationController>()
+                                .addressList
+                                .isEmpty) {
+                              Get.toNamed(RouteHelper.getAddressPage());
+                            }
+                          } else {
+                            Get.toNamed(RouteHelper.getSignInPage());
+                          }
                         },
                         child: Container(
                           padding: EdgeInsets.only(
