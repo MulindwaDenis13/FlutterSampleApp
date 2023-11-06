@@ -57,6 +57,21 @@ class FoodDelivery extends StatelessWidget {
 
 //play service
 // https://sourceforge.net/projects/opengapps/files/x86_64/20220503/open_gapps-x86_64-9.0-stock-20220503.zip/download?use_mirror=master&r=&use_mirror=autoselect
+Open terminal.
+
+//ad flutter globally
+
+//vim $HOME/.zshrc
+
+//Press "I" key for going to insert mode.
+
+//add the following line in the opened file:
+
+//export PATH="$PATH:/YOUR_FLUTTER_DIR/flutter/bin"
+
+Press "Esc" then write :wq! in terminal and press enter to exit vim.
+
+//Reopen the terminal and check "flutter doctor"
 
 //installation
 // Open a new terminal window
