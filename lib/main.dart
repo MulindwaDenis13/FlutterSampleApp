@@ -69,7 +69,7 @@ Open terminal.
 
 //export PATH="$PATH:/YOUR_FLUTTER_DIR/flutter/bin"
 
-Press "Esc" then write :wq! in terminal and press enter to exit vim.
+//Press "Esc" then write :wq! in terminal and press enter to exit vim.
 
 //Reopen the terminal and check "flutter doctor"
 
