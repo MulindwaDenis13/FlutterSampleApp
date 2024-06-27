@@ -54,6 +54,7 @@ class FoodDelivery extends StatelessWidget {
 
 //build apk
 //flutter build apk --build-name=1.0 --build-number=1 --no-tree-shake-icons
+//flutter build apk --split-per-abi
 
 // xcode
 // https://xcodereleases.com/
